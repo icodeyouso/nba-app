@@ -1,0 +1,24 @@
+<h1>Libraries</h1>
+
+<div class="well">
+  <ul class="nav nav-pills">
+    {{#link-to 'libraries.index' tagName="li"}}<a href="">List all</a>{{/link-to}}
+    {{#link-to 'libraries.new' tagName="li"}}<a href="">Add new</a>{{/link-to}}
+  </ul>
+</div>
+
+{{outlet}}
+ <script type="text/x-handlebars">
+    <h2>Welcome to Ember.js</h2>
+
+    {{outlet}}
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="index">
+  Ember.js repository contributors
+    <ul>
+    {{#each user in controller}}
+      <li>{{user.author.login}}</li>
+    {{/each}}
+  </ul>
+  </script>
