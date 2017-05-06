@@ -1,0 +1,49 @@
+<h2>List</h2>
+<div class="row">
+  {{#each model as |library|}}
+    <div class="col-md-4">
+      <div class="panel panel-default library-item">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{library.name}}</h3>
+        </div>
+        <div class="panel-body">
+          <p>Address: {{library.address}}</p>
+          <p>Phone: {{library.phone}}</p>
+        </div>
+        <div class="panel-footer text-right">
+          {{#link-to 'libraries.edit' library.id class='btn btn-success btn-xs'}}Edit{{/link-to}}
+          <button class="btn btn-danger btn-xs" {{action 'deleteLibrary' library}}>Delete</button>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Usame</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
